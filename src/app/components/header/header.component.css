@@ -1,0 +1,35 @@
+.container-menu{
+    height: 5em;
+    padding:  1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 2px rgb(201, 201, 201) solid;
+
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    
+}
+li{
+    margin-left: 10px; margin-right: 10px;
+    text-decoration: none;
+}
+
+.logo-and-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #444f;
+}
+.logo-and-link h2{
+    transition: 0.4s;
+}
+.logo-and-link:hover > h2{
+    color: #DC29;
+}
