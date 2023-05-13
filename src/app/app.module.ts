@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,8 +14,10 @@ import { AboutComponent } from './components/pages/about/about.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NewMomentsComponent } from './components/pages/new-moments/new-moments.component';
 import { MomentsFormsComponent } from './components/pages/moments-forms/moments-forms.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MessagesComponent } from './components/messages/messages.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MomentComponent } from './components/moment/moment.component';
+import { EditMomentComponent } from './components/pages/edit-moment/edit-moment.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { MessagesComponent } from './components/messages/messages.component';
     HomeComponent,
     NewMomentsComponent,
     MomentsFormsComponent,
-    MessagesComponent
+    MessagesComponent,
+    MomentComponent,
+    EditMomentComponent
   ],
   imports: [
     BrowserModule,

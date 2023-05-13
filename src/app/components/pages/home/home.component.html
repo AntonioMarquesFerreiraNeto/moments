@@ -1,1 +1,23 @@
-<p>Página home!</p>
+<div class="home-container">
+    <h1>Veja o que estão compartilhando:</h1>
+    <div class="search-container">
+        <form action="">
+            <fa-icon [icon]="faSearch"></fa-icon>
+            <input type="text" placeholder="busque por momento." (input)="search($event)">
+        </form>
+    </div>
+    <div *ngIf="listMoments.length > 0; else moments_null">
+        <div class="moments-container">
+            <div class="moment" *ngFor="let moment of listMoments">
+                <img src="{{baseApiUrl}}/uploads/{{moment.image}}" alt="{{moment.title}}">
+                <h3>Título: {{moment.title}}</h3>
+                <p class="date">Em: {{moment.created_at}}</p>
+                <p>Comentários: {{moment.comments!.length}}</p>
+                <p><a routerLink="moments/{{moment.id}}">Detalhes</a></p>
+            </div>
+        </div>
+    </div>
+    <ng-template #moments_null>
+        <h2>Não encontramos nenhum registro.</h2>
+    </ng-template>
+</div>

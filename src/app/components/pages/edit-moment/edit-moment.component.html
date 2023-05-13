@@ -1,0 +1,4 @@
+<h2>Atualize seu <span>momento!</span></h2>
+<div *ngIf="moment">
+    <app-moments-forms (onSubmit)="editHandler($event)" [btnText]="btnText" [setMoment]="moment"> </app-moments-forms>
+</div>

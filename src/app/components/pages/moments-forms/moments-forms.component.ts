@@ -1,20 +1,26 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Moment } from 'src/app/moments';
+import { MessagesService } from 'src/app/services/messages.service';
 @Component({
   selector: 'app-moments-forms',
   templateUrl: './moments-forms.component.html',
   styleUrls: ['./moments-forms.component.css']
 })
 export class MomentsFormsComponent implements OnInit {
+
+  constructor() {
+
+  }
   @Input() btnText!: string;
+  @Input() setMoment: Moment | null = null;
   @Output() onSubmit = new EventEmitter<Moment>();
   momentForm!: FormGroup;
   ngOnInit(): void {
     this.momentForm = new FormGroup({
-      id: new FormControl(''),
-      title: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      description: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      id: new FormControl(this.setMoment ? this.setMoment.id : ''),
+      title: new FormControl(this.setMoment? this.setMoment.title : '', [Validators.required, Validators.minLength(4)]),
+      description: new FormControl(this.setMoment? this.setMoment.description : '', [Validators.required, Validators.minLength(6)]),
       image: new FormControl('')
     });
   }
